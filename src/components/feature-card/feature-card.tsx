@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Grid, Link, Paper, Typography } from '@material-ui/core';
+import { Button, Grid, Link, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: 'rgba(0,0,0,.3)'
+    backgroundColor: 'rgba(0,0,0,.4)'
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -32,14 +32,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface FeatureCardProps {
-  title?: string;
-  image?: string;
-  imageText?: string;
-  description?: string;
-  linkText?: string;
+  title: string;
+  image: string;
+  imageText: string;
+  description: string;
+  linkText: string;
+  link: string;
 }
 
-const FeatureCard: FC<FeatureCardProps> = ({ title = 'test', image = 'test', imageText = 'test', description = 'test', linkText = 'test' }) => {
+const FeatureCard: FC<FeatureCardProps> = ({ title = 'test', image, imageText, description, linkText, link }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})` }}>
@@ -55,9 +56,9 @@ const FeatureCard: FC<FeatureCardProps> = ({ title = 'test', image = 'test', ima
             <Typography variant='h5' color='inherit' paragraph>
               {description}
             </Typography>
-            <Link variant='subtitle1' href='#'>
+            <Button href={link} target='_blank' variant='contained' color='primary'>
               {linkText}
-            </Link>
+            </Button>
           </div>
         </Grid>
       </Grid>
