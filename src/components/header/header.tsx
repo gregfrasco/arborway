@@ -11,11 +11,9 @@ import {
   ListItemIcon,
   ListItemText,
   Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme
+  Typography
 } from '@material-ui/core';
-import { Menu, EmailOutlined, Facebook, Twitter, Image, Close } from '@material-ui/icons';
+import { Menu, EmailOutlined, Facebook, Twitter, Close } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo.png';
 
@@ -74,10 +72,8 @@ const links = [
 ];
 
 const Header: FC = () => {
-  const theme = useTheme();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const sm = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <>
       <AppBar position='relative' className={classes.spacing}>
@@ -88,7 +84,7 @@ const Header: FC = () => {
             </IconButton>
           </Hidden>
           <Hidden smDown>
-            <img className={classes.image} src={logo} />
+            <img className={classes.image} src={logo} alt="Arborway Committee Logo" />
           </Hidden>
           <Typography variant='h6' className={classes.title}>
             The Arborway Committee for Public Transit, Inc.
@@ -121,7 +117,7 @@ const Header: FC = () => {
           <Drawer open={open} anchor='left'>
             <AppBar position='relative' className={classes.spacing}>
               <Toolbar>
-                <img className={classes.image} src={logo} />
+                <img className={classes.image} src={logo} alt="Arborway Committee Logo" />
                 <IconButton onClick={() => setOpen(false)}>
                   <Close color='secondary' />
                 </IconButton>
