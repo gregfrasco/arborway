@@ -1,18 +1,5 @@
 import React, { FC } from 'react';
-import {
-  AppBar,
-  Button,
-  Divider,
-  Drawer,
-  Hidden,
-  IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Toolbar,
-  Typography
-} from '@material-ui/core';
+import { AppBar, Button, Divider, Drawer, Grid, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@material-ui/core';
 import { Menu, EmailOutlined, Facebook, Twitter, Close } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import logo from './logo.png';
@@ -24,8 +11,10 @@ const useStyles = makeStyles((theme) => ({
   socialButton: {
     marginRight: theme.spacing(1)
   },
+  titleContainer: {
+    flexGrow: 1
+  },
   title: {
-    flexGrow: 1,
     fontWeight: 'bold'
   },
   menuButtons: {
@@ -66,6 +55,10 @@ const links = [
     url: '/'
   },
   {
+    name: 'Archive',
+    url: '/'
+  },
+  {
     name: 'Contact Us',
     url: '/'
   }
@@ -84,11 +77,18 @@ const Header: FC = () => {
             </IconButton>
           </Hidden>
           <Hidden smDown>
-            <img className={classes.image} src={logo} alt="Arborway Committee Logo" />
+            <img className={classes.image} src={logo} alt='Arborway Committee Logo' />
           </Hidden>
-          <Typography variant='h6' className={classes.title}>
-            The Arborway Committee for Public Transit, Inc.
-          </Typography>
+          <Grid className={classes.titleContainer}>
+            <Typography variant='h6' className={classes.title}>
+              The Arborway Committee for Public Transit, Inc.
+            </Typography>
+            <Hidden smDown>
+              <Typography variant='subtitle1' className={classes.title}>
+                Put the "E" in urban transit: Environment, Economy, Equity!
+              </Typography>
+            </Hidden>
+          </Grid>
           <Hidden smDown>
             <IconButton aria-label='facebook' className={classes.socialButton} style={{ background: '#4267B2' }}>
               <Facebook fontSize='inherit' style={{ color: '#FFFFFF' }} />
@@ -117,7 +117,7 @@ const Header: FC = () => {
           <Drawer open={open} anchor='left'>
             <AppBar position='relative' className={classes.spacing}>
               <Toolbar>
-                <img className={classes.image} src={logo} alt="Arborway Committee Logo" />
+                <img className={classes.image} src={logo} alt='Arborway Committee Logo' />
                 <IconButton onClick={() => setOpen(false)}>
                   <Close color='secondary' />
                 </IconButton>

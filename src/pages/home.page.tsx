@@ -1,9 +1,10 @@
 import React, { FC, lazy, Suspense } from 'react';
 import { Header } from '../components/header/header';
-import { Container } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 // @ts-ignore
 import { importMDX } from 'mdx.macro';
 import { FeatureCard } from '../components/feature-card/feature-card';
+import greenline from '../assets/greenline.jpg';
 
 const Content = lazy(() => importMDX('../content/home.mdx'));
 
@@ -15,7 +16,7 @@ const HomePage: FC = () => {
         <FeatureCard
           title='Sign our petition'
           description='Help us provided high quality reliable transportation for Hyde Square residents.'
-          image='https://images.unsplash.com/photo-1557616223-c021d2a8e0f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80'
+          image={greenline}
           imageText='Image of a Green line train on Huntington Ave'
           link='https://www.change.org/p/the-mbta-and-massachusetts-public-officials-extend-the-e-line-along-south-huntington-ave-from-heath-street-to-hyde-sq'
           linkText='Sign'
