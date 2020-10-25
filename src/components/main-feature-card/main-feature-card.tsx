@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-interface FeatureCardProps {
+interface MainFeatureCardProps {
   title: string;
   image: string;
   imageText: string;
@@ -40,7 +40,7 @@ interface FeatureCardProps {
   link: string;
 }
 
-const FeatureCard: FC<FeatureCardProps> = ({ title = 'test', image, imageText, description, linkText, link }) => {
+const MainFeatureCard: FC<MainFeatureCardProps> = ({ title = 'test', image, imageText, description, linkText, link }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})` }}>
@@ -66,4 +66,4 @@ const FeatureCard: FC<FeatureCardProps> = ({ title = 'test', image, imageText, d
   );
 };
 
-export { FeatureCard };
+export { MainFeatureCard };

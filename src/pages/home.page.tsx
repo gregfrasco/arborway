@@ -3,7 +3,7 @@ import { Header } from '../components/header/header';
 import { Container, Grid } from '@material-ui/core';
 // @ts-ignore
 import { importMDX } from 'mdx.macro';
-import { FeatureCard } from '../components/feature-card/feature-card';
+import { MainFeatureCard } from '../components/main-feature-card/main-feature-card';
 import greenline from '../assets/greenline.jpg';
 
 const Content = lazy(() => importMDX('../content/home.mdx'));
@@ -13,7 +13,7 @@ const HomePage: FC = () => {
     <>
       <Header />
       <Container>
-        <FeatureCard
+        <MainFeatureCard
           title='Sign our petition'
           description='Help us provided high quality reliable transportation for Hyde Square residents.'
           image={greenline}
