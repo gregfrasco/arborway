@@ -44,7 +44,7 @@ const links = [
   },
   {
     name: 'FAQ',
-    url: '/'
+    url: '/faq'
   },
   {
     name: 'About Us',

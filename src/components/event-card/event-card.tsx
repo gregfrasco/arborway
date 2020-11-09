@@ -22,7 +22,7 @@ const EventCard: FC = () => {
           <CardContent>
             <Typography component='h2' variant='h5'>
               Events
-              <Event title='Test' date={new Date()} />
+              <Event title='Test' date={new Date('12/10/2020 7:00 PM')} />
             </Typography>
           </CardContent>
         </div>

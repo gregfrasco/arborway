@@ -45,7 +45,7 @@ const Event: FC<EventProps> = ({ date }) => {
   return (
     <ListItem className={classes.container}>
       <Grid className={classes.dateContainer}>
-        <Typography className={classes.date}>{format(date, 'c')}</Typography>
+        <Typography className={classes.date}>{format(date, 'd')}</Typography>
         <Typography className={classes.month}>{format(date, 'LLL')}</Typography>
         <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
       </Grid>
