@@ -5,8 +5,9 @@ import { Container, Grid } from '@material-ui/core';
 import { importMDX } from 'mdx.macro';
 import { MainFeatureCard } from '../components/main-feature-card/main-feature-card';
 import greenline from '../assets/greenline.jpg';
+import { EventCard } from '../components/event-card/event-card';
 
-const Content = lazy(() => importMDX('../content/home.mdx'));
+const Content = lazy(() => importMDX('../../content/home.mdx'));
 
 const HomePage: FC = () => {
   return (
@@ -21,6 +22,9 @@ const HomePage: FC = () => {
           link='https://www.change.org/p/the-mbta-and-massachusetts-public-officials-extend-the-e-line-along-south-huntington-ave-from-heath-street-to-hyde-sq'
           linkText='Sign'
         />
+        <Grid container spacing={4}>
+          <EventCard />
+        </Grid>
         <Suspense fallback={<div>Loading...</div>}>
           <Content />
         </Suspense>
