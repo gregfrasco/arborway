@@ -4,8 +4,11 @@ import { Container, Grid } from '@material-ui/core';
 // @ts-ignore
 import { importMDX } from 'mdx.macro';
 import { MainFeatureCard } from '../components/main-feature-card/main-feature-card';
-import greenline from '../assets/greenline.jpg';
 import { EventCard } from '../components/event-card/event-card';
+import { ImageCard } from '../components/image-card/image-card';
+
+import greenline from '../assets/greenline.jpg';
+import ELineStops from '../assets/E-Line-Stops.jpg';
 
 const Content = lazy(() => importMDX('../../content/home.mdx'));
 
@@ -25,9 +28,14 @@ const HomePage: FC = () => {
         <Grid container spacing={4}>
           <EventCard />
         </Grid>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Content />
-        </Suspense>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={7} md={8}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Content />
+            </Suspense>
+          </Grid>
+          <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+        </Grid>
       </Container>
     </>
   );
