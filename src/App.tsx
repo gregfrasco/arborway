@@ -14,13 +14,13 @@ function App() {
       <ThemeProvider theme={theme}>
         <Router>
           <Switch>
-            <Route path='/' exact>
+            <Route path='/'>
               <HomePage />
             </Route>
-            <Route path='/about-us' exact>
+            <Route path='/about-us'>
               <AboutUsPage />
             </Route>
-            <Route path='/faq' exact>
+            <Route path='/faq'>
               <FAQPage />
             </Route>
           </Switch>
