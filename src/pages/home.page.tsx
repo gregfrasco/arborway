@@ -9,6 +9,7 @@ import { ImageCard } from '../components/image-card/image-card';
 
 import greenline from '../assets/greenline.jpg';
 import ELineStops from '../assets/E-Line-Stops.jpg';
+import { Footer } from '../components/footer/footer';
 
 const Content = lazy(() => importMDX('../../content/home.mdx'));
 
@@ -37,6 +38,7 @@ const HomePage: FC = () => {
           <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 };

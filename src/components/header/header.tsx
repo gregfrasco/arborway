@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { AppBar, Button, Divider, Drawer, Grid, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@material-ui/core';
-import { Menu, EmailOutlined, Facebook, Twitter, Close } from '@material-ui/icons';
+import { Close, EmailOutlined, Facebook, Menu, Twitter } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
-import logo from './logo.png';
+import logo from '../../assets/logo.png';
+import { UrlLinks } from '../../constants/urls';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,35 +33,35 @@ const useStyles = makeStyles((theme) => ({
 const links = [
   {
     name: 'Home',
-    url: '/'
+    url: UrlLinks.HOME
   },
   {
     name: 'Hyde Square',
-    url: '/'
+    url: UrlLinks.HYDE_SQUARE
   },
   {
     name: 'Support',
-    url: '/'
+    url: UrlLinks.SUPPORT
   },
   {
     name: 'FAQ',
-    url: '/faq'
+    url: UrlLinks.FAQ
   },
   {
     name: 'About Us',
-    url: '/about-us'
+    url: UrlLinks.ABOUT_US
   },
   {
     name: 'Other Projects',
-    url: '/'
+    url: UrlLinks.OTHER_PROJECTS
   },
   {
     name: 'Archive',
-    url: '/'
+    url: UrlLinks.ARCHIVE
   },
   {
     name: 'Contact Us',
-    url: '/'
+    url: UrlLinks.CONTACT_US
   }
 ];
 
@@ -108,7 +109,7 @@ const Header: FC = () => {
                 {link.name}
               </Button>
             ))}
-            <Button className={classes.menuButtons} variant='contained' color='secondary'>
+            <Button href={UrlLinks.DONATE} className={classes.menuButtons} variant='contained' color='secondary'>
               Donate
             </Button>
           </Toolbar>
@@ -131,7 +132,7 @@ const Header: FC = () => {
               ))}
               <Divider />
               <ListItem button href='/donate'>
-                <Button className={classes.menuButtons} variant='contained' color='primary' disableRipple>
+                <Button href={UrlLinks.DONATE} className={classes.menuButtons} variant='contained' color='primary' disableRipple>
                   Donate
                 </Button>
               </ListItem>
