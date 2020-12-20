@@ -2,7 +2,7 @@
   "name": "arborway",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gregfrasco.com/arborway/",
+  "homepage": "https://gregfrasco.com/arborway",
   "dependencies": {
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",

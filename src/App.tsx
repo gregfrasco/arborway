@@ -9,24 +9,16 @@ import { FAQPage } from './pages/faq.page';
 
 function App() {
   return (
-    <>
+    <Router>
       <CssBaseline />
       <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route path='/'>
-              <HomePage />
-            </Route>
-            <Route path='/about-us'>
-              <AboutUsPage />
-            </Route>
-            <Route path='/faq'>
-              <FAQPage />
-            </Route>
-          </Switch>
-        </Router>
+        <Switch>
+          <Route exact={true} path='/about-us' component={AboutUsPage} />
+          <Route exact={true} path='/faq' component={FAQPage} />
+          <Route exact={true} path='/' component={HomePage} />
+        </Switch>
       </ThemeProvider>
-    </>
+    </Router>
   );
 }
 
