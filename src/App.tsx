@@ -1,34 +1,23 @@
-import React from 'react'
-import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
-import FancyDiv from 'components/FancyDiv'
-import Dynamic from 'containers/Dynamic'
-import './app.css'
-
-// Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic'])
+import React from 'react';
+import { Root, Routes } from 'react-static';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import { theme } from './theme';
+import { Header } from 'components/header/header';
 
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-      </nav>
-      <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
-      </div>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <React.Suspense fallback={<em>Loading...</em>}>
+          <Header />
+          <div className='content'>
+            <Routes />
+          </div>
+        </React.Suspense>
+      </ThemeProvider>
     </Root>
-  )
+  );
 }
 
-export default App
+export default App;
