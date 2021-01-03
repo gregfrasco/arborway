@@ -1,15 +1,16 @@
 import React from 'react';
+import {Container} from "@material-ui/core";
+import {MainFeatureCard} from "components/main-feature-card/main-feature-card";
+
+const greenline = require('../assets/greenline.jpg');
+//const ELineStops = require('../assets/E-Line-Stops.jpg');
 
 export default () => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>
-      Welcome to React-Static <br /> + TypeScript
-    </h1>
-    <p>
-      Learn <a href='https://github.com/sw-yx/react-typescript-cheatsheet'>React + TypeScript</a>
-    </p>
-    <p>
-      <a href='https://twitter.com/swyx'>Report issues with this template</a>
-    </p>
-  </div>
+  <Container>
+    <MainFeatureCard
+      image={greenline}
+      imageText='Image of a Green line train on Huntington Ave'
+    />
+  </Container>
 );
+
