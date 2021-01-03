@@ -3,6 +3,8 @@ import { createGenerateClassName } from '@material-ui/core/styles'
 const generateClassName = createGenerateClassName()
 
 export default {
+  siteRoot: "http://gregfrasco.com",
+  basePath: "arborway",
   entry: path.join(__dirname, 'src', 'index.tsx'),
   plugins: [
     'react-static-plugin-typescript',
