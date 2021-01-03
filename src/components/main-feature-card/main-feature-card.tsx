@@ -50,15 +50,21 @@ const MainFeatureCard: FC<MainFeatureCardProps> = ({ title, image, imageText, de
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>
-            {title && <Typography component='h1' variant='h3' color='inherit' gutterBottom>
-              {title}
-            </Typography>}
-            {description && <Typography variant='h5' color='inherit' paragraph>
-              {description}
-            </Typography>}
-            {linkText && <Button href={link} target='_blank' variant='contained' color='primary'>
-              {linkText}
-            </Button>}
+            {title && (
+              <Typography component='h1' variant='h3' color='inherit' gutterBottom>
+                {title}
+              </Typography>
+            )}
+            {description && (
+              <Typography variant='h5' color='inherit' paragraph>
+                {description}
+              </Typography>
+            )}
+            {linkText && (
+              <Button href={link} target='_blank' variant='contained' color='primary'>
+                {linkText}
+              </Button>
+            )}
           </div>
         </Grid>
       </Grid>

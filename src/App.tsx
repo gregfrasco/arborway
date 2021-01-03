@@ -1,7 +1,7 @@
 import React from 'react';
 import { Root, Routes } from 'react-static';
-import {ThemeProvider, CssBaseline } from '@material-ui/core';
-import {MDXProvider} from '@mdx-js/react'
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+import { MDXProvider } from '@mdx-js/react';
 import { theme } from './theme';
 import { Header } from 'components/header/header';
 import { Footer } from 'components/footer/footer';
