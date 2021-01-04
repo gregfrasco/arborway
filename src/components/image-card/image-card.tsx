@@ -14,9 +14,6 @@ const useStyles = makeStyles(() => ({
   },
   cardMedia: {
     flexGrow: 1
-  },
-  cardContent: {
-    height: 50
   }
 }));
 
@@ -31,7 +28,7 @@ const ImageCard: FC<ImageCardProps> = ({ image, description }) => {
     <Grid item xs={12} sm={5} md={4} className={classes.container}>
       <Card variant='outlined' className={classes.card}>
         <CardMedia component='img' className={classes.cardMedia} image={image} title='Image title' />
-        <CardContent className={classes.cardContent}>
+        <CardContent>
           <Typography>{description}</Typography>
         </CardContent>
       </Card>
