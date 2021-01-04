@@ -10,7 +10,8 @@ const useStyles = makeStyles(() => ({
   },
   card: {
     flex: 1,
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    minWidth: '25vw'
   },
   cardMedia: {
     flexGrow: 1

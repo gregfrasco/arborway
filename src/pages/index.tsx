@@ -32,23 +32,27 @@ export default () => {
     <Container>
       <MainFeatureCard image={greenline} imageText='Image of a Green line train on Huntington Ave' />
       <Grid container>
-        <Grid item xs={12} md={6} className={classes.section}>
-          <Welcome />
-          <Button variant='contained' color='primary' size='medium' className={classes.button}>
-            Read our mission statement
-          </Button>
+        <Grid container xs={12} md={6}>
+          <Grid item xs={12} className={classes.section}>
+            <Welcome />
+            <Button variant='contained' color='primary' size='medium' className={classes.button}>
+              Read our mission statement
+            </Button>
+          </Grid>
+          <Grid item xs={12} className={classes.section}>
+            <Mission />
+            <Button variant='contained' color='primary' size='medium' style={{ marginTop: 15 }}>
+              Learn More about Hyde Square
+            </Button>
+          </Grid>
         </Grid>
-        <Grid container justify='center' xs={12} md={6} className={classes.section}>
-          <EventCard />
-        </Grid>
-        <Grid item xs={12} md={6} className={classes.section}>
-          <Mission />
-          <Button variant='contained' color='primary' size='medium' style={{ marginTop: 15 }}>
-            Learn More about Hyde Square
-          </Button>
-        </Grid>
-        <Grid container justify='center' xs={12} md={6} className={classes.section}>
-          <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+        <Grid container xs={12} md={6}>
+          <Grid container justify='center' xs={12} className={classes.section}>
+            <EventCard />
+          </Grid>
+          <Grid container justify='center' xs={12} className={classes.section}>
+            <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+          </Grid>
         </Grid>
         <Grid item xs={12} md={4} lg={4} className={classes.section}>
           <Typography align='center' variant='h5' color='primary'>
