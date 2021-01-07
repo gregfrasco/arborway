@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Grid, ListItem, ListItemText, Typography } from '@material-ui/core';
+import { Button, CardActions, Grid, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import format from 'date-fns/format';
 
@@ -36,26 +36,37 @@ const useStyles = makeStyles({
     flexDirection: 'row'
   },
   eventButton: {
-    flex: 1
+    flex: 1,
+    textTransform: 'none'
   }
 });
 
 const Event: FC<EventProps> = ({ date }) => {
   const classes = useStyles();
   return (
-    <ListItem className={classes.container}>
-      <Grid className={classes.dateContainer}>
-        <Typography className={classes.date}>{format(date, 'd')}</Typography>
-        <Typography className={classes.month}>{format(date, 'LLL')}</Typography>
-        <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
-      </Grid>
-      <div className={classes.eventContainer}>
-        <ListItemText primary='Join our annual meeting' />
+    <>
+      <ListItem className={classes.container}>
+        <Grid className={classes.dateContainer}>
+          <Typography className={classes.date}>{format(date, 'do')}</Typography>
+          <Typography className={classes.month}>{format(date, 'LLL')}</Typography>
+          <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
+        </Grid>
+        <div className={classes.eventContainer}>
+          <ListItemText
+            primary='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.
+'
+          />
+        </div>
+      </ListItem>
+      <CardActions>
         <Button className={classes.eventButton} variant='outlined'>
+          Learn More
+        </Button>
+        <Button className={classes.eventButton} variant='contained' color='primary'>
           Join Zoom Meeting
         </Button>
-      </div>
-    </ListItem>
+      </CardActions>
+    </>
   );
 };
 

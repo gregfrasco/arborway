@@ -20,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: 'bold'
   },
-  menuButtons: {
-    textTransform: 'none'
-  },
   spacing: {
     marginBottom: theme.spacing(2)
   },
@@ -107,11 +104,11 @@ const Header: FC = () => {
         <Hidden smDown>
           <Toolbar>
             {links.map((link) => (
-              <Button component={Link} className={classes.menuButtons} to={link.url} color='secondary'>
+              <Button component={Link} to={link.url} color='secondary'>
                 {link.name}
               </Button>
             ))}
-            <Button component={Link} to={Urls.DONATE} className={classes.menuButtons} variant='contained' color='secondary'>
+            <Button component={Link} to={Urls.DONATE} variant='contained' color='secondary'>
               Donate
             </Button>
           </Toolbar>
@@ -134,14 +131,7 @@ const Header: FC = () => {
               ))}
               <Divider />
               <ListItem>
-                <Button
-                  component={Link}
-                  to={Urls.DONATE}
-                  className={classes.menuButtons}
-                  variant='contained'
-                  color='primary'
-                  disableRipple
-                  onClick={() => setOpen(false)}>
+                <Button component={Link} to={Urls.DONATE} variant='contained' color='primary' disableRipple onClick={() => setOpen(false)}>
                   Donate
                 </Button>
               </ListItem>

@@ -30,7 +30,14 @@ export default () => {
   const classes = useStyles();
   return (
     <Container>
-      <MainFeatureCard image={greenline} imageText='Image of a Green line train on Huntington Ave' />
+      <MainFeatureCard
+        image={greenline}
+        imageText='Hero Image'
+        title='Sign our petition'
+        description='Help us provided high quality reliable transportation for Hyde Square residents.'
+        link='https://www.change.org/p/the-mbta-and-massachusetts-public-officials-extend-the-e-line-along-south-huntington-ave-from-heath-street-to-hyde-sq'
+        linkText='Sign on Change.org'
+      />
       <Grid container>
         <Grid container xs={12} md={6}>
           <Grid item xs={12} className={classes.section}>

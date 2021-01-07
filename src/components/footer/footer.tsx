@@ -53,15 +53,19 @@ const footers = [
     ]
   },
   {
-    title: 'Contact Us',
+    title: 'Contact',
     links: [
-      {
-        title: 'Donate',
-        link: Urls.DONATE
-      },
       {
         title: 'Contact Us',
         link: Urls.CONTACT_US
+      },
+      {
+        title: 'Support',
+        link: Urls.SUPPORT
+      },
+      {
+        title: 'Donate',
+        link: Urls.DONATE
       }
     ]
   }
