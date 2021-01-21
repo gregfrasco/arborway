@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Typography } from '@material-ui/core';
 import { Event } from './event';
+import EventIcon from '@material-ui/icons/Event';
 
 const useStyles = makeStyles(({ spacing }) => ({
   card: {
@@ -11,6 +12,14 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
   cardDetails: {
     flex: 1
+  },
+  iconContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flexWrap: 'wrap'
+  },
+  title: {
+    marginLeft: spacing(1)
   }
 }));
 
@@ -21,10 +30,13 @@ const EventCard: FC = () => {
     <Card className={classes.card} variant='outlined'>
       <div className={classes.cardDetails}>
         <CardContent>
-          <Typography component='h2' variant='h5'>
-            Events
-            <Event title='Test' date={new Date('12/10/2020 7:00 PM')} />
-          </Typography>
+          <Box className={classes.iconContainer}>
+            <EventIcon />
+            <Typography component='h2' variant='h5' className={classes.title}>
+              Events
+            </Typography>
+          </Box>
+          <Event title='Test' date={new Date('12/10/2020 7:00 PM')} />
         </CardContent>
       </div>
     </Card>

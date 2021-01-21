@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Typography } from '@material-ui/core';
+import '../constants/mdx.css';
 
 const style = { paddingTop: 6, paddingBottom: 6 };
 

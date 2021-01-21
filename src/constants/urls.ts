@@ -5,7 +5,7 @@ export enum Urls {
   DONATE = '#',
   FAQ = '#',
   HOME = '',
-  HYDE_SQUARE = '#',
+  HYDE_SQUARE = 'hydesquare',
   OTHER_PROJECTS = '#',
   SUPPORT = '#'
 }
