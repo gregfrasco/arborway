@@ -41,7 +41,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Event: FC<EventProps> = ({ date }) => {
+const Event: FC<EventProps> = ({ title, date }) => {
   const classes = useStyles();
   return (
     <>
@@ -52,10 +52,7 @@ const Event: FC<EventProps> = ({ date }) => {
           <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
         </Grid>
         <div className={classes.eventContainer}>
-          <ListItemText
-            primary='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.
-'
-          />
+          <ListItemText primary={title} />
         </div>
       </ListItem>
       <CardActions>

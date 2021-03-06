@@ -36,7 +36,14 @@ const EventCard: FC = () => {
               Events
             </Typography>
           </Box>
-          <Event title='Test' date={new Date('12/10/2020 7:00 PM')} />
+          <Event
+            title='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.'
+            date={new Date('12/10/2020 7:00 PM')}
+          />
+          <Event
+            title='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.'
+            date={new Date('12/10/2020 7:00 PM')}
+          />
         </CardContent>
       </div>
     </Card>
