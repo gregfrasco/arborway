@@ -1,5 +1,5 @@
 export enum Urls {
-  ABOUT_US = '#',
+  ABOUT_US = 'about',
   ARCHIVE = '#',
   CONTACT_US = '#',
   DONATE = '#',
