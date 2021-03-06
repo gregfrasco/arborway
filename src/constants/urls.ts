@@ -3,7 +3,7 @@ export enum Urls {
   ARCHIVE = '#',
   CONTACT_US = '#',
   DONATE = '#',
-  FAQ = '#',
+  FAQ = 'faq',
   HOME = '',
   HYDE_SQUARE = 'hydesquare',
   OTHER_PROJECTS = '#',
