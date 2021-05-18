@@ -1,13 +1,17 @@
 import React from 'react';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
-import { Eco, Commute, FlashOnRounded } from '@material-ui/icons';
+import { Commute, Eco, FlashOnRounded } from '@material-ui/icons';
 import { MainFeatureCard } from 'components/main-feature-card/main-feature-card';
 
 import Welcome from '../content/home/welcome.mdx';
 import Mission from '../content/home/mission.mdx';
+import CompleteStreets from '../content/home/complete-streets.mdx';
 import { ImageCard } from 'components/image-card/image-card';
 import { EventCard } from 'components/event-card/event-card';
 import { makeStyles } from '@material-ui/core/styles';
+import { Modal } from 'components/modal/modal';
+import { ModalNames } from '../constants/modal-names';
+import { useModal } from '../hooks/useModal';
 
 const greenline = require('../assets/greenline.jpg');
 const ELineStops = require('../assets/E-Line-Stops.jpg');
@@ -28,6 +32,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 export default () => {
   const classes = useStyles();
+  const { openModal } = useModal();
   return (
     <Container>
       <MainFeatureCard image={greenline} imageText='Hero Image' />
@@ -63,7 +68,7 @@ export default () => {
           </Button>
         </Grid>
         <Grid container item justify='center' xs={12} md={4} lg={4} className={classes.section}>
-          <Button size='large' color='primary' startIcon={<Commute className={classes.icon} />}>
+          <Button size='large' color='primary' startIcon={<Commute className={classes.icon} />} onClick={() => openModal(ModalNames.COMPLETE_STREETS)}>
             <div>
               <Typography align='center' variant='h6' color='primary'>
                 Complete Streets
@@ -87,6 +92,9 @@ export default () => {
           </Button>
         </Grid>
       </Grid>
+      <Modal name={ModalNames.COMPLETE_STREETS} title='Complete Streets'>
+        <CompleteStreets />
+      </Modal>
     </Container>
   );
 };

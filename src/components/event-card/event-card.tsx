@@ -33,7 +33,7 @@ const EventCard: FC = () => {
           <Box className={classes.iconContainer}>
             <EventIcon />
             <Typography component='h2' variant='h5' className={classes.title}>
-              Events
+              Announcements
             </Typography>
           </Box>
           <Event

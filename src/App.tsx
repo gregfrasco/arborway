@@ -6,6 +6,7 @@ import { theme } from './theme';
 import { Header } from 'components/header/header';
 import { Footer } from 'components/footer/footer';
 import { mdx } from './constants/mdx';
+import { ModalProvider } from './hooks/useModal';
 
 function App() {
   return (
@@ -21,11 +22,13 @@ function App() {
       <ThemeProvider theme={theme}>
         <MDXProvider components={{ ...mdx }}>
           <React.Suspense fallback={<em>Loading...</em>}>
-            <Header />
-            <div className='content'>
-              <Routes />
-            </div>
-            <Footer />
+            <ModalProvider>
+              <Header />
+              <div className='content'>
+                <Routes />
+              </div>
+              <Footer />
+            </ModalProvider>
           </React.Suspense>
         </MDXProvider>
       </ThemeProvider>
