@@ -6,6 +6,8 @@ import { MainFeatureCard } from 'components/main-feature-card/main-feature-card'
 import Welcome from '../content/home/welcome.mdx';
 import Mission from '../content/home/mission.mdx';
 import CompleteStreets from '../content/home/complete-streets.mdx';
+import EnvJustice from '../content/home/enviormental-justice.mdx';
+import TransitVehicles from '../content/home/vehicel-transit.mdx';
 import { ImageCard } from 'components/image-card/image-card';
 import { EventCard } from 'components/event-card/event-card';
 import { makeStyles } from '@material-ui/core/styles';
@@ -56,7 +58,11 @@ export default () => {
           <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
         </Grid>
         <Grid container item justify='center' xs={12} md={4} lg={4} className={classes.section}>
-          <Button size='large' color='primary' startIcon={<FlashOnRounded className={classes.icon} />}>
+          <Button
+            size='large'
+            color='primary'
+            startIcon={<FlashOnRounded className={classes.icon} />}
+            onClick={() => openModal(ModalNames.TRANSIT_VEHICLES_ELECTRIC)}>
             <div>
               <Typography align='center' variant='h6' color='primary'>
                 Transit Vehicle Electrification
@@ -80,7 +86,7 @@ export default () => {
           </Button>
         </Grid>
         <Grid container item justify='center' xs={12} md={4} lg={4} className={classes.section}>
-          <Button size='large' color='primary' startIcon={<Eco className={classes.icon} />}>
+          <Button size='large' color='primary' startIcon={<Eco className={classes.icon} />} onClick={() => openModal(ModalNames.ENV_JUSTICE)}>
             <div>
               <Typography align='center' variant='h6' color='primary'>
                 Environmental Justice
@@ -92,8 +98,14 @@ export default () => {
           </Button>
         </Grid>
       </Grid>
+      <Modal name={ModalNames.TRANSIT_VEHICLES_ELECTRIC} title='Transit Vehicle Electrification'>
+        <TransitVehicles />
+      </Modal>
       <Modal name={ModalNames.COMPLETE_STREETS} title='Complete Streets'>
         <CompleteStreets />
+      </Modal>
+      <Modal name={ModalNames.ENV_JUSTICE} title='Environmental Justice'>
+        <EnvJustice />
       </Modal>
     </Container>
   );

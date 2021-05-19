@@ -29,7 +29,7 @@ const ModalView: FC<ModalProps & ModalViewProps> = (props) => {
   const { children, currentOpen, message, name, title } = props;
 
   return (
-    <Dialog fullWidth={true} open={currentOpen === name} onClose={closeModal}>
+    <Dialog fullWidth={true} maxWidth='md' open={currentOpen === name} onClose={closeModal}>
       {title && (
         <DialogTitle>
           <Typography variant='h6'>{title}</Typography>
