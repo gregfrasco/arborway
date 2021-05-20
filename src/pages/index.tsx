@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { Box, Button, Container, Grid, Hidden, Typography } from '@material-ui/core';
 import { Commute, Eco, FlashOnRounded } from '@material-ui/icons';
 import { MainFeatureCard } from 'components/main-feature-card/main-feature-card';
 
@@ -17,6 +17,7 @@ import { useModal } from '../hooks/useModal';
 
 const greenline = require('../assets/greenline.jpg');
 const ELineStops = require('../assets/E-Line-Stops.jpg');
+const subwayMap = require('../assets/subway-map.png');
 
 const useStyles = makeStyles(({ spacing }) => ({
   section: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     marginBottom: spacing(4)
   },
   button: {
-    marginTop: spacing(4)
+    marginTop: spacing(2)
   },
   icon: {
     verticalAlign: 'middle',
@@ -48,14 +49,30 @@ export default () => {
         <Grid item justify='center' xs={12} md={6} className={classes.section}>
           <EventCard />
         </Grid>
-        <Grid item xs={12} md={6} className={classes.section}>
+        <Grid item xs={12} md={7} className={classes.section}>
           <Mission />
-          <Button variant='contained' color='primary' size='medium' style={{ marginTop: 15 }}>
+          <Button variant='contained' color='primary' size='medium' className={classes.button}>
             Learn More about Hyde Square
           </Button>
         </Grid>
-        <Grid container item justify='center' xs={12} md={6} className={classes.section}>
-          <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+        <Grid item xs={12} md={5} />
+        <Grid container item justify='center' xs={12} md={12} className={classes.section}>
+          <Typography align='center' variant='h5' color='primary'>
+            MBTA System Map showing the region of the Green Line Hyde Square Extension
+          </Typography>
+        </Grid>
+        <Grid container item justify='center' xs={12} md={7} className={classes.section} spacing={1}>
+          <ImageCard image={subwayMap} />
+        </Grid>
+        <Grid container item justify='center' xs={12} md={5} className={classes.section} spacing={1}>
+          <Hidden smUp>
+            <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+          </Hidden>
+          <Hidden smDown>
+            <Box px={15}>
+              <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
+            </Box>
+          </Hidden>
         </Grid>
         <Grid container item justify='center' xs={12} md={4} lg={4} className={classes.section}>
           <Button
