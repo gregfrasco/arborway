@@ -3,7 +3,7 @@ import { AppBar, Button, Divider, Drawer, Grid, Hidden, IconButton, List, ListIt
 import { Close, EmailOutlined, Facebook, Menu, Twitter } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 import { Urls } from '../../constants/urls';
-import { Link } from '@reach/router';
+import { Link, useLocation } from '@reach/router';
 
 const logo = require('../../assets/logo.png');
 
@@ -66,6 +66,7 @@ const links = [
 
 const Header: FC = () => {
   const classes = useStyles();
+  const { pathname } = useLocation();
   const [open, setOpen] = React.useState(false);
   return (
     <>
@@ -104,7 +105,7 @@ const Header: FC = () => {
         <Hidden smDown>
           <Toolbar>
             {links.map((link) => (
-              <Button component={Link} to={link.url} color='secondary'>
+              <Button component={Link} to={link.url} color='secondary' style={pathname === link.url ? { textDecoration: 'underline' } : {}}>
                 {link.name}
               </Button>
             ))}

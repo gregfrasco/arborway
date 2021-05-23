@@ -2,7 +2,6 @@ import React, { FC, Fragment } from 'react';
 import { Box, Button, CardActions, Grid, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import format from 'date-fns/format';
-import { Link } from '@reach/router';
 import { Skeleton } from '@material-ui/lab';
 
 interface EventProps {
@@ -92,7 +91,7 @@ const Event: FC<EventProps & LoadingProps> = ({ title, date, linkTitle, link, lo
       </ListItem>
       {link && linkTitle && (
         <CardActions>
-          <Button className={classes.eventButton} variant='contained' color='primary' component={Link} to={link}>
+          <Button className={classes.eventButton} variant='contained' color='primary' href={link}>
             {linkTitle}
           </Button>
         </CardActions>
