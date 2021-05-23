@@ -7,6 +7,7 @@ import { Header } from 'components/header/header';
 import { Footer } from 'components/footer/footer';
 import { mdx } from './constants/mdx';
 import { ModalProvider } from './hooks/useModal';
+import { EventProvider } from './hooks/useEvents';
 
 function App() {
   return (
@@ -23,11 +24,13 @@ function App() {
         <MDXProvider components={{ ...mdx }}>
           <React.Suspense fallback={<em>Loading...</em>}>
             <ModalProvider>
-              <Header />
-              <div className='content'>
-                <Routes />
-              </div>
-              <Footer />
+              <EventProvider>
+                <Header />
+                <div className='content'>
+                  <Routes />
+                </div>
+                <Footer />
+              </EventProvider>
             </ModalProvider>
           </React.Suspense>
         </MDXProvider>

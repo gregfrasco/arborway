@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Card, CardContent, Typography } from '@material-ui/core';
 import { Event } from './event';
 import EventIcon from '@material-ui/icons/Event';
+import { useEvents } from '../../hooks/useEvents';
 
 const useStyles = makeStyles(({ spacing }) => ({
   card: {
@@ -25,7 +26,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 
 const EventCard: FC = () => {
   const classes = useStyles();
-
+  const { events, loading } = useEvents();
   return (
     <Card className={classes.card} variant='outlined'>
       <div className={classes.cardDetails}>
@@ -36,14 +37,9 @@ const EventCard: FC = () => {
               Announcements
             </Typography>
           </Box>
-          <Event
-            title='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.'
-            date={new Date('12/10/2020 7:00 PM')}
-          />
-          <Event
-            title='Join the Arborway Committee for Public Transit, Inc. (ACPT) in welcoming Jarred Johnson, Director of TransitMatters, as Guest Speaker at our 2020 Annual Meeting.'
-            date={new Date('12/10/2020 7:00 PM')}
-          />
+          {events.map((event, i) => (
+            <Event key={i} title={event.title} date={event.date} link={event.link} linkTitle={event.linkTitle} loading={loading} />
+          ))}
         </CardContent>
       </div>
     </Card>

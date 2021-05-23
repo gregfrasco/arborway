@@ -1,11 +1,19 @@
-import React, { FC } from 'react';
-import { Button, CardActions, Grid, ListItem, ListItemText, Typography } from '@material-ui/core';
+import React, { FC, Fragment } from 'react';
+import { Box, Button, CardActions, Grid, ListItem, ListItemText, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import format from 'date-fns/format';
+import { Link } from '@reach/router';
+import { Skeleton } from '@material-ui/lab';
 
 interface EventProps {
-  title: string;
-  date: Date;
+  title?: string;
+  date?: Date;
+  linkTitle?: string;
+  link?: string;
+}
+
+interface LoadingProps {
+  loading: boolean;
 }
 
 const useStyles = makeStyles({
@@ -41,30 +49,56 @@ const useStyles = makeStyles({
   }
 });
 
-const Event: FC<EventProps> = ({ title, date }) => {
+const Event: FC<EventProps & LoadingProps> = ({ title, date, linkTitle, link, loading }) => {
   const classes = useStyles();
   return (
     <>
       <ListItem className={classes.container}>
-        <Grid className={classes.dateContainer}>
-          <Typography className={classes.date}>{format(date, 'do')}</Typography>
-          <Typography className={classes.month}>{format(date, 'LLL')}</Typography>
-          <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
-        </Grid>
-        <div className={classes.eventContainer}>
-          <ListItemText primary={title} />
-        </div>
+        {!loading && date && (
+          <Grid className={classes.dateContainer}>
+            {loading && (
+              <Fragment>
+                <Typography className={classes.date}>
+                  <Skeleton />
+                </Typography>
+                <Typography className={classes.month}>
+                  <Skeleton />
+                </Typography>
+                <Typography className={classes.time}>
+                  <Skeleton />
+                </Typography>
+              </Fragment>
+            )}
+            {!loading && date && (
+              <Fragment>
+                <Typography className={classes.date}>{format(date, 'do')}</Typography>
+                <Typography className={classes.month}>{format(date, 'LLL')}</Typography>
+                <Typography className={classes.time}>{format(date, 'h:mm a')}</Typography>
+              </Fragment>
+            )}
+          </Grid>
+        )}
+        <Box className={classes.eventContainer}>
+          {loading && (
+            <Fragment>
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+              <Skeleton />
+            </Fragment>
+          )}
+          {!loading && <ListItemText primary={title} />}
+        </Box>
       </ListItem>
-      <CardActions>
-        <Button className={classes.eventButton} variant='outlined'>
-          Learn More
-        </Button>
-        <Button className={classes.eventButton} variant='contained' color='primary'>
-          Join Zoom Meeting
-        </Button>
-      </CardActions>
+      {link && linkTitle && (
+        <CardActions>
+          <Button className={classes.eventButton} variant='contained' color='primary' component={Link} to={link}>
+            {linkTitle}
+          </Button>
+        </CardActions>
+      )}
     </>
   );
 };
 
-export { Event };
+export { Event, EventProps };

@@ -14,6 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Modal } from 'components/modal/modal';
 import { ModalNames } from '../constants/modal-names';
 import { useModal } from '../hooks/useModal';
+import { Urls } from '../constants/urls';
+import { Link } from '@reach/router';
 
 const greenline = require('../assets/greenline.jpg');
 const ELineStops = require('../assets/E-Line-Stops.jpg');
@@ -51,7 +53,7 @@ export default () => {
         </Grid>
         <Grid item xs={12} md={7} className={classes.section}>
           <Mission />
-          <Button variant='contained' color='primary' size='medium' className={classes.button}>
+          <Button variant='contained' color='primary' size='medium' className={classes.button} component={Link} to={Urls.HYDE_SQUARE}>
             Learn More about Hyde Square
           </Button>
         </Grid>
@@ -68,8 +70,8 @@ export default () => {
           <Hidden smUp>
             <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
           </Hidden>
-          <Hidden smDown>
-            <Box px={15}>
+          <Hidden xsDown>
+            <Box px={14}>
               <ImageCard image={ELineStops} description='Green Line Extension to Hyde Square' />
             </Box>
           </Hidden>
