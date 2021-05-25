@@ -10,16 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(4),
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    height: '60vh'
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundColor: 'rgba(0,0,0,.4)'
+    backgroundPosition: 'center'
   },
   mainFeaturedPostContent: {
     position: 'relative',
@@ -38,15 +29,14 @@ interface MainFeatureCardProps {
   description?: string;
   linkText?: string;
   link?: string;
+  height?: string;
 }
 
-const MainFeatureCard: FC<MainFeatureCardProps> = ({ title, image, imageText, description, linkText, link }) => {
+const MainFeatureCard: FC<MainFeatureCardProps> = ({ title, image, imageText, description, linkText, link, height = '60vh' }) => {
   const classes = useStyles();
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})` }}>
-      {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={image} alt={imageText} />}
-      <div className={classes.overlay} />
+    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${image})`, height }}>
+      <img style={{ display: 'none' }} src={image} alt={imageText} />
       <Grid container>
         <Grid item md={6}>
           <div className={classes.mainFeaturedPostContent}>

@@ -105,7 +105,7 @@ const Header: FC = () => {
         <Hidden smDown>
           <Toolbar>
             {links.map((link) => (
-              <Button component={Link} to={link.url} color='secondary' style={pathname === link.url ? { textDecoration: 'underline' } : {}}>
+              <Button component={Link} to={link.url} color='secondary' style={`/${pathname}` === link.url ? { textDecoration: 'underline' } : {}}>
                 {link.name}
               </Button>
             ))}

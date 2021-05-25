@@ -8,6 +8,7 @@ const welcome = require('../assets/jp-welcome.jpg');
 import HydeSquare from '../content/hyde sq/hydesquare.mdx';
 import WhyExtend from '../content/hyde sq/why-extension.mdx';
 import { makeStyles } from '@material-ui/core/styles';
+import { Petition } from 'components/petition/petition';
 
 const useStyles = makeStyles(({ spacing }) => ({
   section: {
@@ -28,7 +29,14 @@ export default () => {
   const classes = useStyles();
   return (
     <Container>
-      <MainFeatureCard image={hydesq} imageText='Hero Image' />
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          <MainFeatureCard image={hydesq} imageText='Hero Image' height='100vh' />
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Petition />
+        </Grid>
+      </Grid>
       <Grid container spacing={5}>
         <Grid container item justify='center' xs={12} className={classes.section}>
           <Typography variant='h4'>

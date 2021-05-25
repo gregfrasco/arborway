@@ -15,7 +15,6 @@ import { Modal } from 'components/modal/modal';
 import { ModalNames } from '../constants/modal-names';
 import { useModal } from '../hooks/useModal';
 import { Urls } from '../constants/urls';
-import { Link } from '@reach/router';
 
 const greenline = require('../assets/greenline.jpg');
 const ELineStops = require('../assets/E-Line-Stops.jpg');
@@ -53,7 +52,7 @@ export default () => {
         </Grid>
         <Grid item xs={12} md={7} className={classes.section}>
           <Mission />
-          <Button variant='contained' color='primary' size='medium' className={classes.button} component={Link} to={Urls.HYDE_SQUARE}>
+          <Button variant='contained' color='primary' size='medium' className={classes.button} href={Urls.HYDE_SQUARE}>
             Learn More about Hyde Square
           </Button>
         </Grid>
