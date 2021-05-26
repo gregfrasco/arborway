@@ -2,7 +2,7 @@ import { EventProps } from 'components/event-card/event';
 import React, { createContext, FC, useContext, useEffect, useState } from 'react';
 import diff from 'date-fns/differenceInCalendarDays';
 const SPREADSHEET_ID = '1__G_C1IX_gRVMA-zFaUMtFOGPTQpeFLonTYuOI8wjWo';
-const KEY = 'AIzaSyAtezutGscTRkAeOb_e9_INb0QXZ_Id5kE';
+const KEY = process.env.EVENTS_KEY;
 
 export interface EventContextProps {
   loading: boolean;
