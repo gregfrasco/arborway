@@ -3,7 +3,7 @@ import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '
 
 const Petition: FC = () => {
   return (
-    <Card style={{ height: '100vh' }}>
+    <Card>
       <CardHeader title='Sign our petition' />
       <CardContent>
         <Typography>Help us provided high quality reliable transportation for Hyde Square residents.</Typography>

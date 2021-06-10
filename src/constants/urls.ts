@@ -1,11 +1,11 @@
 export enum Urls {
   ABOUT_US = 'about',
-  ARCHIVE = '#',
+  ARCHIVE = 'archive',
   CONTACT_US = '#',
   DONATE = '#',
   FAQ = 'faq',
   HOME = '',
   HYDE_SQUARE = 'hydesquare',
-  OTHER_PROJECTS = '#',
-  SUPPORT = '#'
+  OTHER_PROJECTS = 'otherprojects',
+  SUPPORT = 'support'
 }
