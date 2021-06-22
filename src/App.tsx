@@ -9,6 +9,7 @@ import { mdx } from './constants/mdx';
 import { ModalProvider } from './hooks/useModal';
 import { EventProvider } from './hooks/useEvents';
 import ReactGA from 'react-ga';
+import { Loading } from 'components/loading/loading';
 
 function App() {
   useEffect(() => {
@@ -26,7 +27,13 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <MDXProvider components={{ ...mdx }}>
-          <React.Suspense fallback={<em>Loading...</em>}>
+          <React.Suspense
+            fallback={
+              <>
+                <Header />
+                <Loading />
+              </>
+            }>
             <ModalProvider>
               <EventProvider>
                 <Header />
