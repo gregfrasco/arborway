@@ -8,6 +8,7 @@ import Mission from '../content/home/mission.mdx';
 import CompleteStreets from '../content/home/complete-streets.mdx';
 import EnvJustice from '../content/home/enviormental-justice.mdx';
 import TransitVehicles from '../content/home/vehicel-transit.mdx';
+import MissionStatement from '../content/home/mission-statement.mdx';
 import { ImageCard } from 'components/image-card/image-card';
 import { EventCard } from 'components/event-card/event-card';
 import { makeStyles } from '@material-ui/core/styles';
@@ -43,7 +44,7 @@ export default () => {
       <Grid container>
         <Grid item xs={12} md={6} className={classes.section}>
           <Welcome />
-          <Button variant='contained' color='primary' size='medium' className={classes.button}>
+          <Button variant='contained' color='primary' size='medium' className={classes.button} onClick={() => openModal(ModalNames.MISSION_STATEMENT)}>
             Read our mission statement
           </Button>
         </Grid>
@@ -124,6 +125,9 @@ export default () => {
       </Modal>
       <Modal name={ModalNames.ENV_JUSTICE} title='Environmental Justice'>
         <EnvJustice />
+      </Modal>
+      <Modal name={ModalNames.MISSION_STATEMENT} title='Mission Statement'>
+        <MissionStatement />
       </Modal>
     </Container>
   );

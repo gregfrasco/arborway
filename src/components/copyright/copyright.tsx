@@ -4,16 +4,20 @@ import { Link, Typography } from '@material-ui/core';
 const Copyright: FC = () => {
   return (
     <>
-      <Typography variant='body2' color='textSecondary' align='center'>
-        {'Copyright © '}
-        <Link color='inherit' href='/'>
-          The Arborway Committee for Public Transit, Inc.
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
+      <Link component={Typography} align='center' color='primary' href='/' style={{ fontWeight: 'bold' }}>
+        The Arborway Committee for Public Transit, Inc.
+      </Link>
       <Typography variant='body2' color='textSecondary' align='center'>
         A 501(c)(3) Organization
+      </Typography>
+      <Link component={Typography} variant='body2' align='center' color='primary' href='mailto:arborway.committee@gmail.com'>
+        Arborway.Committee@gmail.com
+      </Link>
+      <Typography variant='body2' color='textSecondary' align='center'>
+        c/o 51R Eliot Street Jamaica Plain 02130
+      </Typography>
+      <Typography variant='body2' color='textSecondary' align='center'>
+        Copyright © {new Date().getFullYear()}.
       </Typography>
     </>
   );

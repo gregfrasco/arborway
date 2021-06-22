@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
-import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
 const Petition: FC = () => {
   return (
     <Card>
-      <CardHeader title='Sign our petition' />
       <CardContent>
-        <Typography>Help us provided high quality reliable transportation for Hyde Square residents.</Typography>
+        <Typography>Sign our petition in support of the Green Line Extension to Hyde Square</Typography>
       </CardContent>
       <CardActions>
         <Button

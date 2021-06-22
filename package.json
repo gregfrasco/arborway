@@ -20,15 +20,18 @@
     "@reach/router": "1.3.4",
     "axios": "0.21.0",
     "date-fns": "2.16.1",
+    "formik": "2.2.9",
     "react": "16.14.0",
     "react-dom": "16.14.0",
+    "react-ga": "3.3.0",
     "react-jss": "10.5.0",
     "react-static": "7.4.2",
     "react-static-plugin-jss": "7.3.0",
     "react-static-plugin-reach-router": "7.4.2",
     "react-static-plugin-sitemap": "7.4.2",
     "react-static-plugin-source-filesystem": "7.4.2",
-    "react-static-plugin-typescript": "7.4.2"
+    "react-static-plugin-typescript": "7.4.2",
+    "yup": "0.32.9"
   },
   "devDependencies": {
     "@types/node": "^12.7.2",

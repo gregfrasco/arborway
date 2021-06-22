@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Box, Container, Grid, Link, Typography } from '@material-ui/core';
+import { Box, Container, Divider, Grid, Link, Typography } from '@material-ui/core';
 import { Link as RouterLink } from '@reach/router';
 import { Copyright } from '../copyright/copyright';
 import { makeStyles } from '@material-ui/core/styles';
@@ -94,6 +94,7 @@ const Footer: FC = () => {
             </Grid>
           ))}
         </Grid>
+        <Divider style={{ marginTop: '1rem' }} />
         <Box mt={5}>
           <Copyright />
         </Box>

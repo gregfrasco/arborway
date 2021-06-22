@@ -1,8 +1,8 @@
 export enum Urls {
   ABOUT_US = 'about',
   ARCHIVE = 'archive',
-  CONTACT_US = '#',
-  DONATE = '#',
+  CONTACT_US = 'contact-us',
+  DONATE = 'donate',
   FAQ = 'faq',
   HOME = '',
   HYDE_SQUARE = 'hydesquare',

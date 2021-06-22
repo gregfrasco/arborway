@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card, CardContent, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Divider, Typography } from '@material-ui/core';
 import { Event } from './event';
 import EventIcon from '@material-ui/icons/Event';
 import { useEvents } from '../../hooks/useEvents';
@@ -38,7 +38,10 @@ const EventCard: FC = () => {
             </Typography>
           </Box>
           {events.map((event, i) => (
-            <Event key={i} title={event.title} date={event.date} link={event.link} linkTitle={event.linkTitle} loading={loading} />
+            <>
+              <Event key={i} title={event.title} date={event.date} link={event.link} linkTitle={event.linkTitle} loading={loading} />
+              {events.length - 1 != i && <Divider />}
+            </>
           ))}
         </CardContent>
       </div>

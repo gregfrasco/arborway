@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Head, Root, Routes } from 'react-static';
 import { ThemeProvider, CssBaseline } from '@material-ui/core';
 import { MDXProvider } from '@mdx-js/react';
@@ -8,8 +8,12 @@ import { Footer } from 'components/footer/footer';
 import { mdx } from './constants/mdx';
 import { ModalProvider } from './hooks/useModal';
 import { EventProvider } from './hooks/useEvents';
+import ReactGA from 'react-ga';
 
 function App() {
+  useEffect(() => {
+    ReactGA.initialize('UA-98487943-1');
+  }, []);
   return (
     <Root>
       <Head>
