@@ -11,7 +11,7 @@ const mdx: { [key: string]: FC } = {
   h4: (props) => <Typography style={style} variant='h4' {...props} />,
   h5: (props) => <Typography style={style} variant='h5' {...props} />,
   h6: (props) => <Typography style={style} variant='h6' {...props} />,
-  p: (props) => <Typography style={style} {...props} />
+  p: (props) => <Typography variant='body1' style={style} {...props} />
 };
 
 export { mdx };
