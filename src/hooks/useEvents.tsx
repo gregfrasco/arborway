@@ -22,7 +22,7 @@ const transform = (event: string[]): EventProps => {
 
 const EventProvider: FC = (props) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [events, setEvents] = useState<EventProps[]>([{}, {}]);
+  const [events, setEvents] = useState<EventProps[]>([{}, {}, {}, {}]);
 
   useEffect(() => {
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/Sheet1!A2:D5?key=${KEY}`)

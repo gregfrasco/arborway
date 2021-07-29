@@ -47,17 +47,16 @@ export default () => {
           <Button variant='contained' color='primary' size='medium' className={classes.button} onClick={() => openModal(ModalNames.MISSION_STATEMENT)}>
             Read our mission statement
           </Button>
+          <Box className={classes.section}>
+            <Mission />
+            <Button variant='contained' color='primary' size='medium' className={classes.button} href={Urls.HYDE_SQUARE}>
+              Learn More about Hyde Square
+            </Button>
+          </Box>
         </Grid>
         <Grid item justify='center' xs={12} md={6} className={classes.section}>
           <EventCard />
         </Grid>
-        <Grid item xs={12} md={7} className={classes.section}>
-          <Mission />
-          <Button variant='contained' color='primary' size='medium' className={classes.button} href={Urls.HYDE_SQUARE}>
-            Learn More about Hyde Square
-          </Button>
-        </Grid>
-        <Grid item xs={12} md={5} />
         <Grid container item justify='center' xs={12} md={12} className={classes.section}>
           <Typography align='center' variant='h5' color='primary'>
             MBTA System Map showing the region of the Green Line Hyde Square Extension
